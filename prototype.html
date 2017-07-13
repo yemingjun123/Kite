@@ -1,0 +1,35 @@
+<!--Copyright © 2017 Scott. All rights reserved..--> 
+<!--Describe : prototype-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function Father() {
+				this.name = "scott";
+			}
+			
+			// change the prototype
+			Father.prototype.age = 20;
+			Father.prototype.eat = function() {
+				console.log("eating...")
+			}
+
+			var f1 = new Father();
+			var f2 = new Father();
+			var f3 = new Father();
+			
+			// change the prototype 
+			f1.__proto__.age = 100 ;
+			
+			console.log(f1.age,f2.age,f3.age);
+			console.log(f1.__proto__.age);
+			f1.eat();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

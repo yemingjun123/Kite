@@ -1,0 +1,64 @@
+<!--Copyright © 2017 Scott. All rights reserved..--> 
+<!--Describe : Open Closed Principle-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*--			method 1      --*/
+			function Father(name) {
+				this.name = name;
+				this.money = 999;
+				this.eat = function() {
+					console.log(String(name) + " eat " + "meat");
+				}
+			}
+			
+			function Son() {
+				this.parent = Father;
+				this.parent();
+				delete this.parent;
+			}
+
+			var son = new Son();
+			console.log("money:" + son.money);
+			son.eat();
+			
+			/*--			method 2      --*/
+			function Child (name) {
+				Father.call(this,name);
+			}
+			
+			var child = new Child("ryan");
+			console.log(child);
+			
+			/*--			method 3      --*/
+			function QQ_V1(username, passowrd, nickname) {
+				this.username = username;
+				this.passowrd = passowrd;
+				this.nickname = nickname;
+				this.sendMessages = function(){
+					console.log("sending...");
+				}
+			}
+			
+			function QQ_V2() {
+				QQ_V1.apply(this,arguments);
+				this.callFriend = function() {
+					console.log("calling...");
+				}
+			}
+			
+			var v2 = new QQ_V2("1112","sadaasd","ryan");
+			console.log(v2.username);
+			console.log(v2.passowrd);
+			console.log(v2.nickname);
+			v2.callFriend();
+			v2.sendMessages();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
