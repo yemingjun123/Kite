@@ -1,0 +1,66 @@
+/* common */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.wp {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+body {background: #f0f0f0;}
+
+.z {float: left;}
+.y {float: right;}
+
+li {list-style: none;}
+a {text-decoration: none;}
+img {border: none;}
+
+
+/* haeder */
+header {
+	height: 150px;
+	background-color: white;
+}
+
+header nav li {
+	float: left;
+	margin-right: 0px;
+	width: 100px;
+	height: 148px; 
+	line-height: 150px; 
+	text-align: center;
+}
+
+header nav li a {color:#666;}
+
+header nav li a:hover {color:#0f3; }
+
+header nav li:hover {border-bottom:2px solid #0F3;}
+
+
+/* footer*/
+footer {
+	height: 150px;
+	background-color: white;
+}
+
+footer div {
+	position: absolute;
+}
+
+footer h1 { 
+	text-align: center; 
+	font-size: 16px;
+	margin: 20px 0; 
+	font-weight: bold; 
+}
+
+footer p { 
+	text-align: center;
+	font-size: 14px; 
+	line-height: 26px;
+}
+
