@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	</head>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		
+		div {margin: auto; width: 700px; height: 250px;}
+		
+		li {list-style: none; clear: both;}
+		
+		span {margin: 0; border: 1px solid black; width: 200px; height: 50px; float: left; text-align: center; line-height: 50px;}
+		
+		.cr {background-color: red;}
+	</style>
+	<body>
+		<div>
+			<ul>
+				<li id="li_1">
+					<span>one</span>
+					<span>two</span>
+					<span>three</span>
+				</li>
+				<li id="li_2">
+					<span class="class2">Class2</span>
+					<span class="class2">Class2</span>
+					<span class="class2">Class2</span>
+				</li>
+				<li id="li_3">
+					<span class="class1">Class1</span>
+					<span class="class1">Class1</span>
+					<span class="class1">Class1</span>
+				</li>
+				<li id="li_4">
+					<span id="ID1">Id1</span>
+					<span id="ID2">Id2</span>
+					<span id="ID3">Id3</span>
+				</li>
+				<li id="li_5">
+					<span>one21</span>
+					<span>two22</span>
+					<span>three23</span>
+				</li>				
+			</ul>
+		</div>
+		<br/>
+		<br/>
+		<p style="width: 100%; height: 2px; background-color: black;"></p>
+		<br/>
+		<br/>
+		<span id="sp1">ID1</span>
+		<span id="sp2">ID2</span>
+		<span id="sp3">ID3</span>
+		<span id="sp4">Class1</span>
+		<span id="sp5">Class2</span>
+		<span id="sp6">span</span>
+		<span id="sp7">ID1,2,3</span>
+		<span id="sp8">ID1,Class1</span>
+		<span id="sp9">DIV SPAN</span>
+		<span id="sp10">UL>SPAN</span>
+		<span id="sp11">UL+SPAN</span>
+		<span id="sp12">UL~SPAN</span>
+		<span id="sp13">.class1:odd</span>
+		<span id="sp14">.class1:even</span>
+	</body>
+	<script>
+		$(function() {
+			$("#sp1").click(function() {
+				$("#ID1").toggleClass('cr');
+			});
+	
+			$("#sp2").click(function() {
+				$("#ID2").toggleClass("cr");
+			});
+			
+			$("#sp3").click(function() {
+				$("#ID3").toggleClass('cr');
+			});
+			
+			$("#sp4").click(function() {
+				$(".class1").toggleClass("cr");
+			});
+			
+			$("#sp5").click(function() {
+				$(".class2").toggleClass('cr');
+			});
+		
+			$("#sp6").click(function() {
+				$("span").toggleClass('cr');
+			});
+			
+			// 并列
+			$("#sp7").click(function() {
+				$("#ID1,#ID2,#ID3").toggleClass('cr');
+			});
+			
+			$("#sp8").click(function() {
+				$("#ID1,#ID2,#ID3,.class1").toggleClass('cr');
+			});
+			
+			// 家族选择器
+			$("#sp9").click(function() {
+				$("div ul span").toggleClass('cr');
+			});
+			
+			$("#sp10").click(function() {
+				$("#li_1>span").toggleClass('cr');
+			});
+			
+			$("#sp11").click(function() {
+				$("#ID1+span").toggleClass('cr');
+			});
+			
+			$("#sp12").click(function() {
+				$("#ID1~span").toggleClass('cr');
+			});
+			
+			$("#sp13").click(function() {
+				$(".class1:odd").toggleClass('cr');
+			});
+			
+			$("#sp14").click(function() {
+				$(".class1:even").toggleClass('cr');
+			});
+			
+		});
+	</script>
+</html>
