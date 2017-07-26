@@ -43,18 +43,18 @@ header nav li:hover {border-bottom:2px solid #0F3;}
 
 /* footer*/
 footer {
+	border-top: 2px solid #f0f0f0;
 	height: 150px;
 	background-color: white;
+	/*position: absolute;*/
 }
 
-footer div {
-	position: absolute;
-}
+footer div {position: absolute;}
 
 footer h1 { 
 	text-align: center; 
 	font-size: 16px;
-	margin: 20px 0; 
+	margin: 20px auto;
 	font-weight: bold; 
 }
 
