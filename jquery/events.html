@@ -3,7 +3,46 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<style type="text/css">
+			body {height: 2000px; width: 100%;}
+		</style>
 	</head>
 	<body>
+		<!--resize-->
+		<span>resize次数 :</span><span id="times0">0</span> <br/>
+		<!--scroll-->
+		<span>scroll次数 :</span><span id='times1'>0</span> <br/>
+		<!--鼠标事件-->
+		<label for="" id="click0">点击</label> <br/>
+		<label for="" id="click1">悬停</label> <br/>
+		
+		<input type="text" id="input1" name="crazy" placeholder="占位"/>
 	</body>
+	<script type="text/javascript">
+		$(window).resize(function() {
+			$("#times0").text(parseInt($("#times0").text())+1);
+		});
+		
+		$(window).scroll(function() {
+			$("#times1").text(parseInt($("#times1").text())+1);
+		});
+		
+		$(function(){
+			$("#click0").click(function(){
+				console.log("点击我了");
+			});
+			$("#click1").hover(function(){
+				console.log("进入");
+			},function(){
+				console.log("离开");
+			})
+			$("#input1").blur(function(){
+				console.log("blur");
+			});
+			$("#input1").focus(function(){
+				console.log("focus");
+			});
+		});
+	</script>
 </html>
