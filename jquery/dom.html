@@ -87,12 +87,21 @@
 		</div>
 		<br/>
 		<br/>
-		
-		css class 
+		<!--class操作-->
+		add toggle remove 
 		<span id="add_class">addClass</span>
 		<span id="toggle_class">toggleClass</span>
 		<span id="remove_class">removeClass</span>
 		<div id="dom_class">
+			内容展现区域
+		</div>
+		<br/>
+		<br/>
+		<!--css基础操作--> 
+		css基础操作
+		<span id="css_color">color</span>
+		<span id="css_size_height">height</span>
+		<div id="dom_css">
 			内容展现区域
 		</div>
 	</body>
@@ -108,7 +117,7 @@
 				$("#img_src img").removeAttr("src");
 			});
 			
-//			get
+			//			get
 			$("#node_html").click(function(){
 				alert($("#get_html").html());
 			});
@@ -119,7 +128,7 @@
 				alert($("#get_val").val());
 			});
 			
-//			set
+			//			set
 			$("#node_html_set").click(function(){
 				$("#get_html").html('<strong>zsdszdfcdzxvczv</strong>');
 			});
@@ -130,7 +139,7 @@
 				$("#get_val").val('fsdfsdfsdf');
 			});
 			
-//			append
+			//			append
 			$("#add").click(function(){
 				$("#tips ul").append('<li>this is append!</li>');
 			});
@@ -144,7 +153,7 @@
 				$('<li>this is prepend to!</li>').prependTo("#tips ul");
 			});
 			
-//			after
+			//			after
 			$("#after").click(function(){
 				$("#list1 ul").after('<li>this is after!</li>');
 			});
@@ -158,7 +167,7 @@
 				$('<li>this is insert before!</li>').insertBefore("#list1 ul");
 			});
 			
-//			empty remove clone
+			//			dom: empty remove clone
 			$("#empty").click(function(){
 				$("#node_empty").empty();
 			});
@@ -169,7 +178,7 @@
 				alert($("#node_clone").clone().html());
 			});
 			
-//			add remove toggle class 
+			//			class: add remove toggle  
 			$("#add_class").click(function(){
 				$("#dom_class").addClass('abnormal');
 			});
@@ -178,6 +187,15 @@
 			});
 			$("#toggle_class").click(function(){
 				$("#dom_class").toggleClass('abnormal');
+			});
+			
+			//			css基础操作
+			$("#css_color").click(function(){
+				$("#dom_css").css('color','red');
+				$("#dom_css").css({border:"red solid 1px",height:"100px",width:"300px"});
+			});
+			$("#css_size_height").click(function(){
+				$("#dom_css").height('400px');
 			});
 		});
 	</script>
