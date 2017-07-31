@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<style>
+			span {border: 1px solid red; background-color: skyblue;}
+			#img_src img {height: 200px;}
+			.abnormal {background-color: red;}
+		</style>
+	</head>
+	<body>
+		<!--attr-->
+		属性操作
+		<span id="get_attr">get</span>
+		<span id="alter_attr">alter</span>
+		<span id="remove_attr">remove</span> 
+		<br/>
+		<br/>
+		<div id="img_src"><img src="img/home-bg.jpg" alt="" /></div>
+		<br/>
+		<br/>
+		
+		<!--get-->
+		获取节点内容
+		<span id="node_html">node_html</span>
+		<span id="node_text">node_text</span>
+		<span id="node_val">node_val</span> 
+		<div id="node_get">
+			<div id="get_html"><h6>this is h6 </h6></div>
+			<div id="get_text"><h6>this is h6 </h6></div>
+			<input type="text" id="get_val" value="crazy" />
+		</div>
+		<br/>
+		<br/>
+		
+		<!--set-->
+		设置节点内容
+		<span id="node_html_set">set_html</span>
+		<span id="node_text_set">set_text</span>
+		<span id="node_val_set">set_val</span>
+		<br/>
+		<br/>
+		
+		文档操作展示
+		<span id="add">append</span>
+		<span id="pre_add">prepend</span>
+		<span id="add_to">appendTo</span>
+		<span id="prepend_to">prependTo</span>
+		<div id="tips">
+			<ul>
+				<li>cell 1</li>
+				<li>cell 2</li>
+				<li>cell 3</li>
+				<li>cell 4</li>
+				<li>cell 5</li>
+			</ul>
+		</div>
+		<br/>
+		<br/>
+		
+		after | before
+		<span id="after">after</span>
+		<span id="before">before</span>
+		<span id="insert_after">insert_after</span>
+		<span id="insert_before">insert_before</span>
+		<div id="list1">
+			<ul>
+				<li>cell 1</li>
+				<li>cell 2</li>
+			</ul>
+		</div>
+		<br/>
+		<br/>
+		
+		dom empty remove clone
+		<span id="empty">empty</span>
+		<span id="remove">remove</span>
+		<span id="clone">clone</span>
+		<div id="list2">
+			<ul>
+				<li id="node_empty">empty</li>
+				<li id="node_remove">remove</li>
+				<li id="node_clone">clone</li>
+			</ul>
+		</div>
+		<br/>
+		<br/>
+		
+		css class 
+		<span id="add_class">addClass</span>
+		<span id="toggle_class">toggleClass</span>
+		<span id="remove_class">removeClass</span>
+		<div id="dom_class">
+			内容展现区域
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$("#get_attr").click(function(){
+				alert($("#img_src img").attr("src"))
+			});
+			$("#alter_attr").click(function(){
+				$("#img_src img").attr("src","img/home-bg-o.jpg");
+			});
+			$("#remove_attr").click(function(){
+				$("#img_src img").removeAttr("src");
+			});
+			
+//			get
+			$("#node_html").click(function(){
+				alert($("#get_html").html());
+			});
+			$("#node_text").click(function(){
+				alert($("#get_text").text());
+			});
+			$("#node_val").click(function(){
+				alert($("#get_val").val());
+			});
+			
+//			set
+			$("#node_html_set").click(function(){
+				$("#get_html").html('<strong>zsdszdfcdzxvczv</strong>');
+			});
+			$("#node_text_set").click(function(){
+				$("#get_text").text('szsczdxvczxv');
+			});
+			$("#node_val_set").click(function(){
+				$("#get_val").val('fsdfsdfsdf');
+			});
+			
+//			append
+			$("#add").click(function(){
+				$("#tips ul").append('<li>this is append!</li>');
+			});
+			$("#pre_add").click(function(){
+				$("#tips ul").prepend('<li>this is prepend!</li>');
+			});
+			$("#add_to").click(function(){
+				$('<li>this is append to!</li>').appendTo("#tips ul");
+			});
+			$("#prepend_to").click(function(){
+				$('<li>this is prepend to!</li>').prependTo("#tips ul");
+			});
+			
+//			after
+			$("#after").click(function(){
+				$("#list1 ul").after('<li>this is after!</li>');
+			});
+			$("#before").click(function(){
+				$("#list1 ul").before('<li>this is before!</li>');
+			});
+			$("#insert_after").click(function(){
+				$('<li>this is insert after!</li>').insertAfter("#list1 ul");
+			});
+			$("#insert_before").click(function(){
+				$('<li>this is insert before!</li>').insertBefore("#list1 ul");
+			});
+			
+//			empty remove clone
+			$("#empty").click(function(){
+				$("#node_empty").empty();
+			});
+			$("#remove").click(function(){
+				$("#node_remove").remove();
+			});
+			$("#clone").click(function(){
+				alert($("#node_clone").clone().html());
+			});
+			
+//			add remove toggle class 
+			$("#add_class").click(function(){
+				$("#dom_class").addClass('abnormal');
+			});
+			$("#remove_class").click(function(){
+				$("#dom_class").removeClass('abnormal');
+			});
+			$("#toggle_class").click(function(){
+				$("#dom_class").toggleClass('abnormal');
+			});
+		});
+	</script>
+</html>
