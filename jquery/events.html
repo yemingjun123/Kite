@@ -17,7 +17,17 @@
 		<label for="" id="click0">点击</label> <br/>
 		<label for="" id="click1">悬停</label> <br/>
 		
-		<input type="text" id="input1" name="crazy" placeholder="占位"/>
+		<input type="text" id="input1" name="crazy" placeholder="占位1"/>
+		<input type="text" id="input2" name="crazy" placeholder="key up"/>
+		<input type="text" id="input3" name="crazy" placeholder="key down"/>
+		<input type="text" id="input4" name="crazy" placeholder="key press"/>
+		<!--		控制台-->
+		<span>显示效果：</span><span id="target1"></span> <br/>
+		<span id="_on">on click</span> <br/>
+		<span id="_bind">bind click</span> <br/>
+		<!--<span id="_trigger">trigger click</span> <br/>
+		<span id="_live">live click</span> <br/>-->
+		<!--<>-->
 	</body>
 	<script type="text/javascript">
 		$(window).resize(function() {
@@ -43,6 +53,25 @@
 			$("#input1").focus(function(){
 				console.log("focus");
 			});
+			$("#input2").keyup(function(){
+				$("#target1").text($("#input2").val());
+			});
+			$("#input3").keydown(function(){
+				$("#target1").text($("#input3").val());
+			});
+			$("#input4").keypress(function(){
+				$("#target1").text($("#input4").val());
+			});
+			$("#_on").on("click",function(){
+				console.log("on click");
+			})
+			$("#_bind").bind('click',function(){
+				console.log("bind click");
+			});
+//			$("#_trigger").keypress(function(){
+//				console.log("blur");
+//			});
+			
 		});
 	</script>
 </html>
