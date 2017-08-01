@@ -28,6 +28,13 @@
 			</div>
 			<img id="image_" src="img/animation1.jpg" />
 		</div>
+		<br/>
+		<div id="content">
+			<div id="button_">
+				<span id="animate_">animating</span>
+			</div>
+			<img id="image_1" src="img/animation2.jpg" />
+		</div>
 	</body>
 	<script type="text/javascript">
 		$(function(){
@@ -66,7 +73,11 @@
 			$("#fade_to").click(function(){
 				$("#image_").fadeTo("show",0.5);
 			});
+			
+//			animate
+			$("#animate_").click(function(){
+				$("#image_1").animate({height: "300px", width: "400px", opacity: "0.2"},'2000');
+			});
 		});
-		
 	</script>
 </html>
