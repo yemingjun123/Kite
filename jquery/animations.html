@@ -6,13 +6,9 @@
 		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
 		<style type="text/css">
 			* {margin: 0; padding: 0;}
-			
 			body {text-align: center;}
-			
-			#content {width: 1200px;  margin: 0 auto; background-color: salmon;}
-			
+			#content {width: 1200px; margin: 0 auto; background-color: #d6c0c5;}
 			#button_ {padding: 10px;}
-			
 			#button_ span {margin: 0 8px; padding: 0 10px;  border: 1px solid darkblue;  cursor: pointer;}
 		</style>
 	</head>
@@ -30,10 +26,47 @@
 				<span id="fade_toggle">fadeToggle</span>
 				<span id="fade_to">fadeTo</span>
 			</div>
-			
-			<div>
-				<img src="../fruit_store/img/banner.jpg" />
-			</div>
+			<img id="image_" src="img/animation1.jpg" />
 		</div>
 	</body>
+	<script type="text/javascript">
+		$(function(){
+//			显示影藏
+			$("#show").click(function(){
+				$("#image_").show();
+			});
+			$("#hide").click(function(){
+				$("#image_").hide();
+			});
+			$("#toggle").click(function(){
+				$("#image_").toggle();
+			});
+			
+//			上下滑动
+			$("#slide_down").click(function(){
+				$("#image_").slideDown();
+			});
+			$("#slide_up").click(function(){
+				$("#image_").slideUp();
+			});
+			$("#slide_toggle").click(function(){
+				$("#image_").slideToggle();
+			});
+			
+//			淡入淡出
+			$("#fade_in").click(function(){
+				$("#image_").fadeIn();
+			});
+			$("#fade_out").click(function(){
+				$("#image_").fadeOut();
+			});
+			$("#fade_toggle").click(function(){
+				$("#image_").fadeToggle();
+			});
+			$("#fade_to").click(function(){
+				$("#image_").fadeTo("show",0.5);
+			});
+		});
+		
+	</script>
 </html>
