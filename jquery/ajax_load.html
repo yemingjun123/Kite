@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<style type="text/css">
+			* {margin: 0; padding: 0;}
+			span {border: 1px solid red;}
+		</style>
+	</head>
+	<body>
+		load :
+		<span id="alter">alter</span>
+		<div id="show_"></div>
+		<br/>
+		
+		get :
+		<span id="get_msg_do">get</span> <br />
+		msg:
+		<label id="get_msg"></label>
+		<br/>
+		
+		post : 
+		<span id="post_msg_do">post</span> <br />
+		msg:
+		<label id="post_msg"></label>
+		
+		
+	</body>
+	<script type="text/javascript">
+		$(function(){
+//			load
+			$("#alter").click(function(){
+				$("#show_").load('animations.html');
+			});	
+			
+//			get
+			$("#get_msg_do").click(function(){
+				var url = 'http://192.168.66.190/index.php';
+				var data = {act:'api',tag:'6'};
+				console.log(data);
+				$.get(url,data);
+			});
+			
+//			post
+			$("#post_msg_do").click(function(){
+				var url = 'http://192.168.66.190/index.php';
+				var data = {act:'api',tag:'6'};
+				console.log(data);
+				$.pos(url,data);
+			});
+		});
+	</script>
+</html>
