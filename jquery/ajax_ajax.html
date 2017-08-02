@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="{CHARSET}">
+		<meta charset="utf-8">
 		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
 	</head>
 	<body>
+		ajax 
+		<br/>
+		用户名: <input type="text" id="username" placeholder="请输入用户名" />
+		<br/>
+		msg: <span id="mag"></span>
+		<br />
+		<br />
+		<span id="get_msg_do" style="border: 2px solid darkred;">requset</span>
 	</body>
+	<script type="text/javascript">
+		$(function(){
+			$("#get_msg_do").click(function(){
+				var name = $("#username").val();
+				var url 	= 'http://maizi.itpaimai.com/jquery/ajax';
+				var data = {username: name};
+				$.ajax({
+					type:"jsonp",
+					url: url,
+					data: data,
+					success: function(msg){
+						alert(msg);
+					},
+					error: function(error){
+						alert(error);
+					},
+					timeout: 200
+				});
+			});
+		});
+	</script>
 </html>
