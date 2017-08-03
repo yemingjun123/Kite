@@ -10,45 +10,38 @@
 		</style>
 	</head>
 	<body>
-		load :
-		<span id="alter">alter</span>
+		<!--load-->
+		<button id="load_">向页面发送 HTTP LOAD 请求，然后获得返回的结果</button>
 		<div id="show_"></div>
 		<br/>
-		
-		get :
-		<span id="get_msg_do">get</span> <br />
-		msg:
-		<label id="get_msg"></label>
+	
+		<!--get-->
+		<button id="get_">向页面发送 HTTP GET 请求，然后获得返回的结果</button>
 		<br/>
 		
-		post : 
-		<span id="post_msg_do">post</span> <br />
-		msg:
-		<label id="post_msg"></label>
-		
-		
+		<!--post-->
+		<button id="post_">向页面发送 HTTP POST 请求，然后获得返回的结果</button>
 	</body>
 	<script type="text/javascript">
 		$(function(){
 //			load
-			$("#alter").click(function(){
+			$("#load_").click(function(){
 				$("#show_").load('animations.html');
 			});	
 			
 //			get
-			$("#get_msg_do").click(function(){
-				var url = 'http://192.168.66.190/index.php';
-				var data = {act:'api',tag:'6'};
-				console.log(data);
-				$.get(url,data);
+			$("#get_").click(function(){
+				var url = "asp/dome_test.asp";
+				$.get(url,function(msg,status){
+					alert("Data："+msg+"\nStatus："+status);
+				});
 			});
 			
 //			post
-			$("#post_msg_do").click(function(){
-				var url = 'http://192.168.66.190/index.php';
-				var data = {act:'api',tag:'6'};
-				console.log(data);
-				$.post(url,data);
+			$("#post_").click(function(){
+				$.post("asp/dome_test_post.asp",{name:"Donald Duck",city:"Duckburg" },function(msg,status){
+					alert("Data："+msg+"\nStatus："+status);
+				});
 			});
 		});
 	</script>
