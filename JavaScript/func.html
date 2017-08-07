@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 在调用函数时，您可以向其传递值，这些值被称为参数。
+			 这些参数可以在函数中使用。
+			 可以发送任意多的参数，由逗号 (,) 分隔：
+			 myFunction(argument1,argument2)
+			 */
+			function mySum(a,b,c,d) {
+				return a+b+c+d;
+			}
+			document.write(mySum(1,2,3,4)+"<br/>");
+	
+			// 字面量
+			var myMUL = function(a,b,c,d) {
+				return a*b*c*d;
+			}
+			document.write(myMUL(1,2,3,4)+"<br/>");
+			
+			// 自执行函数
+			(function(a,b){
+				document.write(a+b+"<br/>");
+			})(2,3);
+			
+		</script>
+		
+	</body>
+</html>

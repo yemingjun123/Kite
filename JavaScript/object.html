@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// JavaScript 中的几乎所有事务都是对象：字符串、数字、数组、日期、函数，等等。
+
+			car = new Object();
+			car.name = "Audi";
+			car.model = 500;
+			car.weight = "850kg";
+			car.color = "white";
+			car.start = function() {
+				alert("一辆"+this.color+this.name+"重量"+this.weight+"start");
+			}
+		
+			car.drive = function() {
+				alert("一辆"+this.color+this.name+"重量"+this.weight+"drive");
+			}
+			
+			document.write(car.name + "<br/>");
+			document.write(car.model + "<br/>");
+			document.write(car.weight + "<br/>");
+			document.write(car.color + "<br/>");
+			car.start();
+			car.drive();
+			
+			// Visit the object's propertys and methods 
+ 			var message = "Hello World";
+ 			document.write(typeof message + "<br/>");
+ 			// objectName.propertyName
+ 			document.write(message.length + "<br/>");
+			// objectName.methodName()
+			document.write(message.toUpperCase() + "<br/>");
+		</script>
+	</body>
+</html>

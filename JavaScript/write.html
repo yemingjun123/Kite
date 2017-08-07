@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>My first web page</h1>
+		<div id="box">我的</div>
+		<script type="text/javascript">
+			document.write("<h3>h3</h3>");
+			document.write("<h4>h4</h4>");
+			document.write("<h5>h5</h5>");
+			function writeHTML() {
+				document.write("糟糕！文档消失了。");
+			}
+			
+			function myFunc() {
+				document.getElementById("box").innerHTML = "我的第一段 JavaScript";
+			}
+		</script>
+		<h1>end</h1>
+		<button onclick="myFunc()">JavaScript</button>
+		<button onclick="writeHTML()">write</button>
+	</body>
+</html>

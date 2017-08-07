@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--数据类型包括数字、字符串、布尔、数组、对象、Null、Undefined-->
+		<script>
+			var a;    // undefined
+			document.write(a+"<br/>");
+			
+			// Number
+			var b = 6; 
+			var b1 = 123e5;
+			var b2 = 123e-5;
+			var b3 = 2.33;
+			document.write(b+"<br/>");
+			document.write(b1+"<br/>");
+			document.write(b2+"<br/>");
+			document.write(b3+"<br/>");
+			
+			var c = true;  // bool  true or false
+			var d = "This is string";   // string
+			document.write(c+"<br/>");
+			document.write(d+"<br/>");
+			
+			// Array 
+			var cars = new Array();
+			cars[0] = "Audi";
+			cars[1] = "BMW";
+			cars[2] = "Volvo";
+			var names = new Array("Yomiko","Frank","Ryan");
+			var images = ["img1","img2","img3"];
+			document.write(cars+"<br/>");
+			document.write(names.length+"<br/>");
+			document.write(typeof images+"<br/>");
+			document.write(images[1]+"<br/>");
+			
+			// Object 
+			var person = {firstname:"Ryan", lastname:"He", age:23};
+			document.write(person.firstname+" "+person.lastname+"'s"+" age is "+person.age+"<br/>");
+			document.write(person["firstname"]+" "+person["lastname"]+"'s"+" age is "+person["age"]+"<br/>");
+			
+			// Null 
+			person = null;
+			document.write(person + "<br/>");
+			
+		</script>
+	</body>
+</html>

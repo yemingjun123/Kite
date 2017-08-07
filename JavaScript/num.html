@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var x = 0.2+0.1;
+			var y = 0377;
+			var z = 0xff;
+			
+			document.write(x+"<br/>");
+			document.write(y+"<br/>");
+			document.write(z+"<br/>");		
+			// 指数形式 argument
+			document.write(x.toExponential(1)+"<br/>");
+			// 数字转换为字符串 argument为保留位数
+			document.write(x.toFixed()+"<br/>");
+			// 保留精度 argument为保留位数
+			document.write(x.toPrecision()+"<br/>");
+			// 数字转换为字符串 argument为进制
+			document.write(x.toString()+"<br/>");
+			// Number 对象的基本数字值
+			document.write(x.valueOf()+"<br/>");
+			document.write(typeof x);
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function showErr() {
+				var txt = "";
+				try{
+					getGirlFirend();
+				}catch(e){
+					txt = "Find a error。\n\n";
+					txt += "Describe:"+e.message + "\n\n";
+					txt += "continue。\n\n";				
+					alert(txt);
+				}
+			}
+			
+			// Throw 
+			function diyErr () {
+				try{
+					var x = document.getElementById("idcode").value;
+					if(x=="")    throw "empty";
+  					if(isNaN(x)) throw "not a number";
+  					if(x>10)     throw "too high";
+  					if(x<5)      throw "too low";
+				}catch(e){
+					var msg = document.getElementById("msg");
+					msg.innerHTML = e;
+				}
+			}
+			
+		</script>
+		<button onclick="showErr()">err</button><br/>
+		<p>请输入 5 到 10 之间的数字：</p>
+		<input type="text" name="idcode" id="idcode" value="" />
+		<button onclick="diyErr()">Input</button>
+		<p id="msg"></p>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// for in 
+			var names = ["Yumiko","Frank","Lee","Ryan","Scott"];
+			for (i in names) {
+				document.write(names[i]+"<br/>");
+			}
+			
+			var tet = "";
+			var person = {fname:"John",lname:"Dob",age:25};
+			for (x in person) {
+				tet += person[x];
+			}
+			document.write(tet+"<br/>");
+			
+			// while
+			var x = 0, i = 0;
+			while(i<5) {
+				x += i;
+				i++;
+			}
+			document.write(x+"<br/>");
+			
+			// break and continue
+			for (b = 0; b<10; b++) {
+				if (b == 5) break;
+				document.write("The number is "+b+"<br/>");
+			}
+			
+			for (c = 0; c<10; c++) {
+				if (c == 5) continue;
+				document.write("The number is "+c+"<br/>");
+			}
+			
+		</script>
+	</body>
+</html>
