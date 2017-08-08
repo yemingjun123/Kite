@@ -30,6 +30,7 @@
 			document.write("Timezone is"+(now.getTimezoneOffset()/60)+"<br/>");
 		
 			// UTC
+			document.write("---------------------UTC-------------------"+"<br/>");
 			document.write("UTC year is "+now.getUTCFullYear()+"<br/>");
 			// 从 Date 对象返回月份 (0 ~ 11)。
 			document.write("UTC month is "+getMonth_(now.getUTCMonth())+"<br/>");
@@ -43,11 +44,33 @@
 			document.write("UTC milliseconds is "+now.getUTCMilliseconds()+"<br/>");
 			
 			
+			document.write("---------------------SET-------------------"+"<br/><br/>");
+			// set
+			var d = new Date();
+			// dateObject.setDate(day)
+			d.setDate(2);	
+			document.write(d+"<br/>");
+			// dateObject.setMonth(month,day)
+			d.setMonth(0,12);
+			document.write(d+"<br/>");
+			// dateObject.setFullYear(year,month,day)
+			d.setFullYear(2011,10,11);
+			document.write(d+"<br/>");
+			// dateObject.setHours(hour,min,sec,millisec)
+			d.setHours(11,11,11,11);
+			document.write(d+"<br/>");
+			// dateObject.setMinutes(min,sec,millisec)
+			d.setMinutes(23,56,33);
+			document.write(d+"<br/>");
+			// dateObject.setSeconds(sec,millisec)
+			d.setSeconds(0,12);
+			document.write(d+"<br/>");
 			
 			
-			
-			
-			
+			document.write("string : "+d.toString()+"<br/>");
+			document.write("local string : "+d.toLocaleString()+"<br/>");
+			document.write("time string : "+d.toTimeString()+"<br/>");
+			document.write("date string : "+d.toDateString()+"<br/>");
 			
 			
 			function getWeekDay(day) {
