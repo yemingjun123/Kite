@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var str = "Hello World!";
+			document.write(str+"<br/>");
+			document.write(str.anchor("dd")+"<br/>"); 								// 创建 HTML 锚。
+			document.write("Big: "+str.big()+"<br/>");			 					// 用大号字体显示字符串。
+			document.write("Small: "+str.small()+"<br/>");							// 小号
+			document.write("Bold: "+str.bold()+"<br/>");								// 加粗
+			document.write("Blink: "+str.blink()+"<br/>");							// 闪动
+			document.write("Italic: "+str.italics()+"<br/>");	    					// 斜体
+			document.write("Fixed: "+str.fixed()+"<br/>");							// 以打字机文本显示字符串
+			document.write("Fontcolor: "+str.fontcolor("#f34")+"<br/>");   			// 颜色 
+			document.write("Fontsize: "+str.fontsize(15)+"<br/>");					// 字体大小
+			document.write("Strike: "+str.strike()+"<br/>");							// 删除线
+			document.write("Link: "+str.link("https://www.baidu.com")+"<br/>");		// 链接
+			document.write("Sub: "+str.sub()+"<br/>");								// 下引用
+			document.write("Substr: "+str.substr(0,5)+"<br/>");						// 截取索引a后面b个字符
+			document.write("Substring: "+str.substring(0,5)+"<br/>"); 				// 截取索引a,b之间的字符
+			document.write("Sup: "+str.sup()+"<br/>");								// 上引用
+			document.write("Local lower case: "+str.toLocaleLowerCase()+"<br/>");	// 小写
+			document.write("Local upper case: "+str.toLocaleUpperCase()+"<br/>");   // 大写
+			document.write("Lower case: "+str.toLowerCase()+"<br/>");
+			document.write("Upper case: "+str.toUpperCase()+"<br/>");
+			
+			document.write("返回下标1的字符: "+str.charAt(1)+"<br/>"); 		 		// 返回在指定位置的字符
+			document.write("返回下标1的unicode: "+str.charCodeAt(1)+"<br/>");
+			document.write("拼接，追加: "+str.concat(" I am"," Lee")+"<br/>");
+			document.write("编码111对应字符是: "+String.fromCharCode(111)+"<br/>");	
+			document.write("检索字符串："+str.indexOf("ello")+"<br/>");						// 方法可返回某个指定的字符串值在字符串中首次出现的位置。
+
+			// 正则
+			
+		</script>
+	</body>
+</html>

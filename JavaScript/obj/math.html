@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		 <!--Math 对象并不像 Date 和 String 那样是对象的类，因此没有构造函数 Math()，像 Math.sin() 这样的函数只是函数，不是某个对象的方法。您无需创建它，通过把 Math 作为对象使用就可以调用其所有属性和方法。-->
+		
+		<p>arguments ： </p>
+		<script type="text/javascript">
+			// 返回算术常量 e，即自然对数的底数（约等于2.718）。
+			var e 		= Math.E;
+			// 返回 2 的自然对数（约等于0.693）。
+			var ln2 		= Math.LN2;
+			// 返回 10 的自然对数（约等于2.302）。
+			var ln10 	= Math.LN10;
+			// 返回以 2 为底的 e 的对数（约等于 1.414）。
+			var log2e   = Math.LOG2E;
+			// 返回以 10 为底的 e 的对数（约等于 1.414）。
+			var log10e  = Math.LOG10E;
+			// 返回圆周率
+			var pi 		= Math.PI;
+			// 返回返回 2 的平方根的倒数（约等于 0.707）。
+			var sqrt1_2 = Math.SQRT1_2;
+			// 返回 2 的平方根（约等于 1.414）。
+			var sqrt2	= Math.SQRT2;
+			
+			document.write(e+"<br/>");
+			document.write(ln2+"<br/>");
+			document.write(ln10+"<br/>");
+			document.write(log2e+"<br/>");
+			document.write(log10e+"<br/>");
+			document.write(pi+"<br/>");
+			document.write(sqrt1_2+"<br/>");
+			document.write(sqrt2+"<br/>");
+		</script>
+		<br />
+		<p>methods ： </p>
+		<script type="text/javascript">
+			// （2PI/360）即可转换为弧度。
+			// 绝对值
+			document.write(Math.abs(1-5)+"<br/>");
+			
+			// 反三角函数
+			document.write(Math.acos(30/360)+"<br/>");
+			document.write(Math.asin(30/360)+"<br/>");
+			document.write(Math.atan(30/360)+"<br/>");
+			
+			// 对数进行上舍入。
+			document.write(Math.ceil(4.25)+"<br/>");
+			// 对数进行下舍入。
+			document.write(Math.floor(4.25)+"<br/>");
+			// 把数四舍五入为最接近的整数
+			document.write(Math.round(4.55)+"<br/>");
+			// 返回 e 的指数。
+			document.write(Math.exp(2)+"<br/>");
+			// 取参数中最小值
+			document.write(Math.min(2,-3,9,-7)+"<br/>");
+			// 取参数中最大值
+			document.write(Math.max(2,-3,10)+"<br/>");
+			// pow(x,y)  返回 x 的 y 次幂。
+			document.write(Math.pow(2,4)+"<br/>");
+			// 返回数的平方根。
+			document.write(Math.sqrt(16)+"<br/>");
+			
+			// 三角函数
+			document.write(Math.sin(Math.PI/2)+"<br/>");
+			document.write(Math.cos(Math.PI)+"<br/>");
+			document.write(Math.tan(-1)+"<br/>");
+		</script>
+		
+	</body>
+</html>

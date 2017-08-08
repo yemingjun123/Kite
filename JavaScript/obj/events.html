@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div style="width: 20px; height: 50px; background-color: red;"></div>
+		<script type="text/javascript">
+			window.onload = function() {
+				var box = document.getElementsByTagName("div");
+				clearInterval(box.timer);
+				var speed = 0;
+				box.timer = setInterval(function(){
+					box.style.left = box.ofoffsetLeft + speed + "px";
+					speed ++;
+				},300)
+			}
+		</script>
+	</body>
+</html>
