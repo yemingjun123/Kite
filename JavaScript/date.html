@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var now = new Date();
+			document.write("Now is "+now+"<br/>");
+			// 从 Date 对象返回一个月中的某一天 (1 ~ 31)。
+			document.write("Date is "+now.getDate()+"<br/>");
+			// 从 Date 对象返回一周中的某一天 (0 ~ 6)。
+			document.write(getWeekDay(now.getDay())+"<br/>");
+			// 从 Date 对象以四位数字返回年份。
+			document.write("Year is "+now.getFullYear()+"<br/>");
+			// 从 Date 对象返回月份 (0 ~ 11)。
+			document.write("Month is "+getMonth_(now.getMonth())+"<br/>");
+			// 返回 Date 对象的小时 (0 ~ 23)。
+			document.write("Hours is "+now.getHours()+"<br/>");
+			// 返回 Date 对象的分钟 (0 ~ 59)。
+			document.write("Minutes is "+now.getMinutes()+"<br/>");
+			// 返回 Date 对象的秒数 (0 ~ 59)。
+			document.write("Seconds is "+now.getSeconds()+"<br/>");
+			// 返回 Date 对象的毫秒(0 ~ 999)。
+			document.write("Milliseconds is "+now.getMilliseconds()+"<br/>");
+			// 返回 1970 年 1 月 1 日至今的毫秒数。
+			document.write("Time is "+now.getTime()+"<br/>");
+			// 返回时差
+			document.write("Timezone is"+(now.getTimezoneOffset()/60)+"<br/>");
+		
+			// UTC
+			document.write("UTC year is "+now.getUTCFullYear()+"<br/>");
+			// 从 Date 对象返回月份 (0 ~ 11)。
+			document.write("UTC month is "+getMonth_(now.getUTCMonth())+"<br/>");
+			// 返回 Date 对象的小时 (0 ~ 23)。
+			document.write("UTC hours is "+now.getUTCHours()+"<br/>");
+			// 返回 Date 对象的分钟 (0 ~ 59)。
+			document.write("UTC minutes is "+now.getUTCMinutes()+"<br/>");
+			// 返回 Date 对象的秒数 (0 ~ 59)。
+			document.write("UTC seconds is "+now.getUTCSeconds()+"<br/>");
+			// 返回 Date 对象的毫秒(0 ~ 999)。
+			document.write("UTC milliseconds is "+now.getUTCMilliseconds()+"<br/>");
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			function getWeekDay(day) {
+				var x = "";
+				switch (day){
+  					case 0:
+    						x="Today it's Sunday";
+    						break;
+ 					case 1:
+   						x="Today it's Monday";
+    						break;
+  					case 2:
+    						x="Today it's Tuesday";
+    						break;
+  					case 3:
+    						x="Today it's Wednesday";
+   						 break;
+  					case 4:
+    						x="Today it's Thursday";
+   						 break;
+ 					case 5:
+    						x="Today it's Friday";
+    						break;
+  					case 6:
+   						x="Today it's Saturday";
+   						break;
+				}
+				return x;
+			}	
+			
+			function getMonth_(m) {
+				var x = "";
+				switch (m){
+  					case 0:
+    						x="January";
+    						break;
+ 					case 1:
+   						x="February";
+    						break;
+  					case 2:
+    						x="March";
+    						break;
+  					case 3:
+    						x="April";
+   						 break;
+  					case 4:
+    						x="May";
+   						 break;
+ 					case 5:
+    						x="June";
+    						break;
+  					case 6:
+   						x="July";
+   						break;
+   					case 7:
+   						x="August";
+   						break;
+   					case 8:
+   						x="September";
+   						break;
+   					case 9:
+   						x="October";
+   						break;
+   					case 10:
+   						x="November";
+   						break;
+   					case 10:
+   						x="December";
+   						break;
+				}
+				return x;
+			}
+		</script>
+	</body>
+</html>

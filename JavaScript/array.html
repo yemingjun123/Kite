@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var texts = ["Ryan","Frank","Yumiko","Lee"];
+			var nums = [5,1,4,2,3];
+			/* arguments */ 
+			// 数组长度 
+			document.write(texts.length+"<br/>");
+			
+			/* methods */ 
+			// 排序函数 
+			document.write(texts.sort()+"<br/>");
+			document.write(nums.sort()+"<br/>");
+			// 连接两个或多个数组 argument可以是具体的值，也可以是数组对象。可以是任意多个。
+			document.write(nums.concat(texts)+"<br/>");
+			// 数组字符串。argument 指定分割字符
+			document.write(nums.join("+")+"<br/>");
+			// 删除并返回数组的最后一个元素
+			document.write(nums.pop()+"<br/>");
+			// 向数组的末尾添加一个或更多元素，并返回新的长度。
+			document.write(nums.push(5,6)+"<br/>");
+			// 颠倒数组中元素的顺序
+			document.write("reverse : "+nums.reverse()+"<br/>");
+			// 删除并返回数组的第一个元素
+			document.write(nums.shift()+"<br/>");
+			// arrayObject.slice(start,end) 返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素
+			document.write(nums.slice(2)+"<br/>");
+			/*
+			 * arrayObject.splice(index,howmany,item1,.....,itemX)
+			 * index	必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。
+			 * howmany	必需。要删除的项目数量。如果设置为 0，则不会删除项目。
+			 * tem1, ..., itemX	可选。向数组添加的新项目。
+			*/
+			nums.splice(2,1,3);
+			document.write(nums+"<br/>");
+			// 只有 Gecko 核心的浏览器（比如 Firefox）支持该方法，也就是说 IE、Safari、Chrome、Opera 等浏览器均不支持该方法
+//			document.write(nums.toSource()+"<br/>");
+			// 向数组的开头添加一个或更多元素，并返回新的长度。
+			document.write(nums.unshift(6)+"<br/>");
+			document.write(nums.toString()+"<br/>");
+			document.write(nums.valueOf()+"<br/>");
+			document.write(typeof nums+"<br/>");
+		</script>
+	</body>
+</html>
