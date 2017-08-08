@@ -5,16 +5,19 @@
 		<title></title>
 	</head>
 	<body>
-		<div style="width: 20px; height: 50px; background-color: red;"></div>
+		<div id="box" style="width: 200px; height: 50px; background-color: red; left: 40px; position: absolute;">sss</div>
 		<script type="text/javascript">
 			window.onload = function() {
-				var box = document.getElementsByTagName("div");
+				var box = document.getElementById("box");
 				clearInterval(box.timer);
 				var speed = 0;
 				box.timer = setInterval(function(){
-					box.style.left = box.ofoffsetLeft + speed + "px";
+					if (box.offsetLeft + box.offsetWidth > 500) {
+						clearInterval(box.timer);
+					}
+					box.style.left = box.offsetLeft + speed + "px";
 					speed ++;
-				},300)
+				},300);
 			}
 		</script>
 	</body>
