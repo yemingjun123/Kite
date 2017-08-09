@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {margin: 0; padding: 0;}
+		#box {text-align: center;line-height: 100px; width: 200px; height: 100px; background-color: red; left: 40px; position: absolute;}
+	</style>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		
+		var box = document.getElementById("box");
+		
+		box.onclick = function() {
+			console.log("click");
+		}
+
+		box.ondblclick = function() {
+			console.log("double click");
+		}
+
+		box.onmousedown = function() {
+			console.log("鼠标按键被按下");
+		}
+
+		box.onmousemove = function() {
+			console.log("鼠标移动");
+		}
+
+		box.onmouseout = function() {
+			console.log("鼠标移出");
+		}
+
+		box.onmouseover = function() {
+			console.log("鼠标移入");
+		}
+		
+		box.onselect = function(txt) {
+			console.log(txt);
+		}
+		
+		document.onkeydown = function(key) {
+			console.log(key.code+"被按下");
+		}
+		
+		document.onkeypress = function(key) {
+			console.log(key.code+"按下或按住");
+		}
+		
+		document.onkeyup = function(key) {
+			console.log(key.code+"被松开");
+		}
+		
+		box.onblur = function() {
+			console.log("失去焦点");
+		}
+		
+		box.onfocus = function() {
+			console.log("获得焦点");
+		}
+		
+		box.onchange = function() {
+			console.log();
+		}
+		
+	</script>
+
+</html>
