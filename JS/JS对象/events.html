@@ -39,20 +39,20 @@
 			console.log("鼠标移入");
 		}
 		
-		box.onselect = function(txt) {
-			console.log(txt);
+		box.onselect = function(event) {
+			console.log(event);
 		}
 		
-		document.onkeydown = function(key) {
-			console.log(key.code+"被按下");
+		document.onkeydown = function(event) {
+			console.log(event.code+"被按下");
 		}
 		
-		document.onkeypress = function(key) {
-			console.log(key.code+"按下或按住");
+		document.onkeypress = function(event) {
+			console.log(event.code+"按下或按住");
 		}
 		
-		document.onkeyup = function(key) {
-			console.log(key.code+"被松开");
+		document.onkeyup = function(event) {
+			console.log(event.code+"被松开");
 		}
 		
 		box.onblur = function() {
