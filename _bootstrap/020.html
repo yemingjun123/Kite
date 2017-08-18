@@ -10,5 +10,115 @@
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 	<body>
+		<div class="container">
+			<div class="input-group">
+				<span class="input-group-addon">@</span>
+				<input type="text" class="form-control" placeholder="Username" />
+			</div> 
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Recipient's username" />
+				<span class="input-group-addon">@example.com</span>
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">$</span>
+				<input type="text" class="form-control"/>
+				<span class="input-group-addon">.00</span>
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+				<input type="text" class="form-control"/>
+			</div>
+			<hr />
+			<h1>Size</h1>
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+				<input type="text" class="form-control"/>
+			</div>
+			<div class="input-group input-group-md">
+				<span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+				<input type="text" class="form-control"/>
+			</div>
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-home"></span>
+				</span>
+				<input type="text" class="form-control"/>
+			</div>
+			<hr />
+			<h1>单选、多选框作为额外元素</h1>
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<input type="radio" />
+						</span>
+						<input type="text" class="form-control" />
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<input type="checkbox" />
+						</span>
+						<input type="text" class="form-control" />
+					</div>
+				</div>
+			</div>
+			<hr />
+			<h1>按钮作为额外元素</h1>
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-default">Go!</button>
+						</span>
+						<input type="text" class="form-control" />
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="input-group">
+						<input type="text" class="form-control" />
+						<span class="input-group-btn">
+							<button class="btn btn-default">Go!</button>
+						</span>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<h1>下拉菜单作为额外元素</h1>
+			<div class="input-group">
+				<div class="input-group-btn">
+					<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+						haha
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">item1</a></li>
+						<li><a href="#">item2</a></li>
+						<li><a href="#">item3</a></li>
+						<li><a href="#">item4</a></li>
+					</ul>
+				</div>
+				<input type="text" class="form-control" />
+			</div>
+			<hr />
+			<h1>Multiple buttons</h1>
+			<div class="input-group">
+				<div class="input-group-btn">
+					<button class="btn btn-warning" type="button">btn</button>
+					<button class="btn btn-warning" type="button">btn</button>
+					<button class="btn btn-warning" type="button">btn</button>
+				</div>
+				<input type="text" class="form-control" />
+			</div>
+			<br />
+			<div class="input-group">
+				<input type="text" class="form-control" />
+				<div class="input-group-btn">
+					<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-star"></span></button>
+					<button class="btn btn-default" type="button">star</button>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
