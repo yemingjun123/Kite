@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Ylong</title>
+		<style type="text/css">
+			img {padding: 0;}
+			* {margin: 0; padding: 0;}
+			ul li {list-style: none;}
+			.banner {margin: 40px 5%;}
+			.banner>ul>li {width: 200px; height: 260px; float: left; position: relative;} 
+			.banner>ul>li>div{width: 100%; height: 260px;}
+			.banner>ul>li>div.dis-m {position: absolute; left: 0; top: 0; background: rgba(0,0,0,.3);}
+			.banner>ul>li>div.dis-m>h4 {color: #fff; font-size: 30px; padding: 30px; width: 30px; margin: 0 auto;}
+		</style>
+	<body>
+		
+		<div class="top">
+			<img src="images/top.png" alt="" />
+		</div>
+		
+		<div class="banner">
+			<ul>
+				<li>
+					<div class="dis-m"><h4>园林酒店</h4></div>
+					<div style="background: url(images/1.jpg) center;"></div>
+				</li>
+				<li>
+					<div class="dis-m"><h4>园林酒店</h4></div>
+					<div style="background: url(images/2.jpg) center;"></div>
+				</li>
+				<li>
+					<div class="dis-m"><h4>园林酒店</h4></div>
+					<div style="background: url(images/3.jpg) center;"></div>
+				</li>
+				<li>
+					<div class="dis-m"><h4>园林酒店</h4></div>
+					<div style="background: url(images/4.jpg) center;"></div>
+				</li>
+				<li>
+					<div class="dis-m"><h4>园林酒店</h4></div>
+					<div style="background: url(images/5.jpg) center;"></div>
+				</li>
+				<li>
+					<div class="dis-m"><h4>园林酒店</h4></div>
+					<div style="background: url(images/6.jpg) center;"></div>
+				</li>
+			</ul>
+		</div>
+		
+		<!--JQuery--> 
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				$(".banner>ul>li").mouseover(function(){
+					$(this).stop().animate({width:400}).siblings().stop().animate({width:160});
+					$(this).find(".dis-m").hide();
+				});
+				$('.banner>ul').mouseout(function(){
+					$(this).children().find(".dis-m").show().parent().stop().animate({width:200});
+				});
+			})
+		</script>
+		
+	</body>
+</html>

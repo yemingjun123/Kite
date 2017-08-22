@@ -190,8 +190,8 @@
 				$('.nav.navbar-nav.navbar-right>li>a>span.glyphicon-off').click(function(){
 					alert("logout");
 				})
-				var pages = $('.content>nav>ul>li').slice(2,3);
-				pages.on('click',function(){
+				var pages = $('.content>nav>ul>li');
+				pages.eq(3).on('click',function(){
 					$('.content>ol').html('<li><a href="#">产品功能</a></li><li><a href="#">功能 1</a></li><li class="active">page 2</li>');
 					$('.content>.row>.col-md-12').load('../Dood/index.html');
 				});
