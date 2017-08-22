@@ -6,32 +6,33 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>网站后台管理</title>
 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	</head>
-	<style type="text/css">
-		@media (min-width: 768px) {
-			#sidebar-df {
-				width: 250px;
-				position: absolute;
-				z-index: 1;
+		<style type="text/css">
+			@media only screen and (min-width: 768px) {
+				#sidebar {
+					width: 250px;
+					height: 90%;
+					position: absolute;
+					z-index: 1;
+				}
+				#sidebar>ul>li>ul>li {margin-left: 10px;}
+				#sidebar-search {margin: 10px 0;}
+				.content {margin-left: 255px;}
 			}
-			#sidebar-search {margin: 10px 0;}
-			.main-df {margin-left: 255px; margin-top: 0px;}
-		}
-		#sidebar-df>ul>li>ul>li {margin-left: 10px;}
-	</style>
+		</style>
+	</head>
 	<body>
-		<!--Navigation Bar-->
+		<!--Navigation bar-->
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="navbar-header">
-				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-1">
+				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar">
 					<span class="sr-only">Toggle navigation</span>
         				<span class="icon-bar"></span>
         				<span class="icon-bar"></span>
         				<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">网站后台管理</a>
+				<a href="#" class="navbar-brand">后台管理系统</a>
 			</div>
-			<div class="collapse navbar-collapse" id="navbar-1">
+			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
 					<li><a href="#"><span class="badge" style="background-color: #DD4526;">23</span></a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-off"></span> 注销</a></li>
@@ -40,108 +41,161 @@
 		</nav>
 		
 		<!--Sidebar-->
-		<div class="navbar-collapse navbar-default" id="sidebar-df">
+		<div class="navbar-default navbar-collapse" id="sidebar">
 			<ul class="nav">
 				<li>
 					<div class="input-group" id="sidebar-search">
-						<input type="text" class="form-control" placeholder="search"/>
+						<input type="text" name="q" class="form-control" placeholder="search" />
 						<div class="input-group-btn">
-							<button class="btn btn-default"><span class="glyphicon glyphicon-search"></span> 搜索</button>
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"> 搜索</span></button>
 						</div>
 					</div>
 				</li>
 				<li>
-					<a href="#sub-1" data-toggle="collapse">系统功能</a>
-					<ul class="nav collapse" id="sub-1">
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目1</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目2</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目3</a></li>
+					<a href="#sidebar-func-1" data-toggle="collapse">系统功能</a>
+					<ul class="nav collapse" id="sidebar-func-1">
+						<li><a href="#"><span class="glyphicon glyphicon-heart"></span> 功能1</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-heart"></span> 功能2</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-heart"></span> 功能3</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-heart"></span> 功能4</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="#sub-2" data-toggle="collapse">栏目功能</a>
-					<ul class="nav collapse" id="sub-2">
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目1</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目2</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目3</a></li>
+					<a href="#sidebar-func-2" data-toggle="collapse">栏目功能</a>
+					<ul class="nav collapse" id="sidebar-func-2">
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能1</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能2</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能3</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能4</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="#sub-3" data-toggle="collapse">产品功能</a>
-					<ul class="nav collapse" id="sub-3">
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目1</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目2</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目3</a></li>
+					<a href="#sidebar-func-3" data-toggle="collapse">产品功能</a>
+					<ul class="nav collapse" id="sidebar-func-3">
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能1</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能2</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能3</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能4</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="#sub-4" data-toggle="collapse">Q&amp;A</a>
-					<ul class="nav collapse" id="sub-4">
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目1</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目2</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-heart"></span>子栏目3</a></li>
+					<a href="#sidebar-func-4" data-toggle="collapse">其他</a>
+					<ul class="nav collapse" id="sidebar-func-4">
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能1</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能2</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能3</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-education"></span> 功能4</a></li>
 					</ul>
 				</li>
 			</ul>
 		</div>
 		
-		<!--Main-->
-		<div class="main-df">
+		<!--Content-->
+		<div class="content">
+			<!--路径导航-->
 			<ol class="breadcrumb">
-				<li><a href="#">栏目功能</a></li>
-				<li class="active">子栏目1</li>
+				<li><a href="#">产品功能</a></li>
+				<li><a href="#">产品功能</a></li>
+				<li class="active">产品功能</li>
 			</ol>
-			
-			<div class="row">
+		
+			<!--row 1-->
+			<div class="row" style="margin: 0;">
 				<div class="col-md-6">
-					<!--table 1-->
 					<div class="panel panel-default">
 						<div class="panel-heading">最新订单</div>
 						<div class="panel-body">
 							<table class="table table-striped">
-								<tr><th>#</th><th>订单号</th><th>日期</th><th>状态</th></tr>
-								<tr><td>1</td><td>001</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
-								<tr><td>2</td><td>002</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
-								<tr><td>3</td><td>003</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
-								<tr><td>4</td><td>004</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
-								<tr><td>3</td><td>003</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
-								<tr><td>4</td><td>004</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+								<thead>
+									<tr><th>#</th><th>订单号</th><th>日期</th><th>状态</th></tr>
+								</thead>
+								<tbody>
+									<tr><td>1</td><td>001</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>2</td><td>002</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>3</td><td>003</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>4</td><td>004</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>3</td><td>003</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>4</td><td>004</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+								</tbody>
 							</table>
 						</div>
-					</div>					
+					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="panel panel-default">
 						<div class="panel-heading">最新订单</div>
 						<div class="panel-body">
 							<table class="table table-striped">
-								<tr><th>#</th><th>订单号</th><th>日期</th><th>状态</th></tr>
-								<tr><td>1</td><td>001</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
-								<tr><td>2</td><td>002</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
-								<tr><td>3</td><td>003</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+								<thead>
+									<tr><th>#</th><th>订单号</th><th>日期</th><th>状态</th></tr>
+								</thead>
+								<tbody>
+									<tr><td>1</td><td>001</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>2</td><td>002</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>3</td><td>003</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>4</td><td>004</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									
+								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
 			</div>
 			
-	
+			<!--row 2-->
+			<div class="row" style="margin: 0;">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">最新订单</div>
+						<div class="panel-body">
+							<table class="table table-striped">
+								<thead>
+									<tr><th>#</th><th>订单号</th><th>日期</th><th>状态</th></tr>
+								</thead>
+								<tbody>
+									<tr><td>1</td><td>001</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>2</td><td>002</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>3</td><td>003</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									<tr><td>4</td><td>004</td><td>17-8-21 20:33:24</td><td>出仓</td></tr>
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--Page-->
 			<nav class="pull-right">
-				<ul class="pagination" style="margin-top: 10px;">
-					<li><a href="#">&laquo;</a></li>
+				<ul class="pagination" style="margin: 0 20px;">
+					<li><a href="#"><span>&laquo;</span></a></li>
 					<li class="active"><a href="#">1</a></li>
 					<li><a href="#">2</a></li>
 					<li><a href="#">3</a></li>
 					<li><a href="#">4</a></li>
 					<li><a href="#">5</a></li>
-					<li><a href="#">&raquo;</a></li>	
+					<li><a href="#"><span>&raquo;</span></a></li>	
 				</ul>
-			</nav>
+			</nav>	
 		</div>
+		
 		<!--JQuery-->
 		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.nav.navbar-nav.navbar-right>li>a>span.badge').click(function(){
+					alert('messages');
+				});
+				$('.nav.navbar-nav.navbar-right>li>a>span.glyphicon-off').click(function(){
+					alert("logout");
+				})
+				var pages = $('.content>nav>ul>li').slice(2,3);
+				pages.on('click',function(){
+					$('.content>ol').html('<li><a href="#">产品功能</a></li><li><a href="#">功能 1</a></li><li class="active">page 2</li>');
+					$('.content>.row>.col-md-12').load('../Dood/index.html');
+				});
+			});
+		</script>	
 	</body>
 </html>
-
-
