@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>一级菜单1
+				<ul>
+					<li>二级菜单1</li>
+					<li>二级菜单2
+						<ul>
+							<li>三级菜单1</li>
+							<li>三级菜单2
+								<ul>
+									<li>四级菜单</li>
+									<li>四级菜单</li>
+									<li>四级菜单</li>
+									<li>四级菜单</li>
+								</ul>							
+							</li>
+							<li>三级菜单3</li>
+						</ul>
+					</li>
+					<li>二级菜单3</li>
+				</ul>
+			</li>
+			<li>一级菜单2
+				<ul>
+					<li>二级菜单1</li>
+					<li>二级菜单2</li>
+					<li>二级菜单3</li>
+				</ul>
+			</li>
+			<li>一级菜单3
+				<ul>
+					<li>二级菜单1</li>
+					<li>二级菜单2
+						<ul>
+							<li>三级菜单1</li>
+							<li>三级菜单2</li>
+							<li>三级菜单3
+								<ul>
+									<li>四级菜单</li>
+									<li>四级菜单</li>
+									<li>四级菜单</li>
+									<li>四级菜单</li>
+								</ul>	
+							</li>
+						</ul>
+					</li>
+					<li>二级菜单3</li>
+				</ul>
+			</li>
+			<li>一级菜单4
+				<ul>
+					<li>二级菜单1</li>
+					<li>二级菜单2</li>
+					<li>二级菜单3</li>
+				</ul>
+			</li>
+		</ul>			
+		
+		<!--JQuery--> 
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("li:has(ul)").click(function(event){
+					if (event.target != this) return;
+					if($(this).children().is(':hidden')) {
+						$(this).children().show(1000);
+					} else {
+						$(this).children().hide(1000);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

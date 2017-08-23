@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>筛选</title>
+	</head>
+	<style type="text/css">
+		td {width: 200px; height: 50px; text-align: center; line-height: 50px; border: 1px solid black;}
+	</style>
+	<body>
+		<table>
+			<tr>
+				<th>周一</th>
+				<th>周二</th>
+				<th>周三</th>
+				<th>周四</th>	
+			</tr>
+			<tr>
+				<td>张三</td>
+				<td>李四</td>
+				<td>王五</td>
+				<td>赵六</td>
+			</tr>
+			<tr>
+				<td>lubzsd</td>
+				<td>sdz</td>
+				<td>zsdsz</td>
+				<td>awdeqw</td>
+			</tr>
+			<tr>
+				<td id="selected">zzzza</td>
+				<td>szd</td>
+				<td>ddsf</td>
+				<td>zsd</td>
+			</tr>
+		</table>
+		
+		<!--JQuery--> 
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			// 筛选出与指定表达式匹配的元素集合。
+			$('td').filter(function(){
+				return $(this).attr('id') == "selected";
+			}).css('background-color','salmon');
+			// 
+			var names = $('td').map(function(){
+				return $(this).text();
+			});
+			console.log(names);		
+		</script>
+	</body>
+</html>
