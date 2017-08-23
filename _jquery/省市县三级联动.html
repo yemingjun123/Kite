@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h4>三级联动</h4>
+		省份：
+		<select name="province" id="province" onchange="show_city()">
+			<option value="">--请选择--</option>
+		</select>
+		城市：
+		<select name="city" id="city" onchange="show_area()">
+			<option value="">--请选择--</option>
+		</select>
+		地区：
+		<select name="area" id="area">
+			<option value="">--请选择--</option>
+		</select>
+		
+		<!--JQuery--> 
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			// 存储请求到的数据
+			var xmldom = null;
+			
+			function show_province () {
+				$.get('xml/ChinaArea.xml',function(msg){
+					xmldom = msg;
+					// 获取并遍历 province
+					$(msg).find('province').each(function(k,v){
+						var province = $(this).attr('province');
+						var id 		 = $(this).attr('provinceID');	
+						$('#province').append("<option value='"+id+"'>"+province+"</option>");
+					});
+				},'xml');
+			}
+			
+			function show_city () {
+				// 获取当前省份的编码
+				var pid 		= $('#province>option:selected').val();
+				var pid_2 	= pid.substr(0,2);     // 取id前两位
+				// 清除原有的option
+				$('#city,#area').empty();
+				$('#city,#area').append('<option>--请选择--</option>');
+				// 获取并遍历 city 
+				$(xmldom).find('City[CityID^='+pid_2+']').each(function(){
+					var city = $(this).attr('City');
+					var id   = $(this).attr('CityID');
+					$('#city').append("<option value='"+id+"'>"+city+"</option>");
+				});
+			}
+			
+			function show_area () {
+				var cid 		= $('#city>option:selected').val();
+				var cid_4  	= cid.substr(0,4);
+				//  清除原有的option
+				$('#area').empty();
+				$('#area').append('<option>--请选择--</option>');
+				$(xmldom).find('Piecearea[PieceareaID^='+cid_4+']').each(function(){
+					var piecearea = $(this).attr('Piecearea');
+					var aid  	  = $(this).attr('PieceareaID');
+					$('#area').append("<option value='"+aid+"'>"+piecearea+"</option>");
+				});
+			}
+			
+			$(function(){
+				show_province();		
+			});
+		</script>
+	</body>
+</html>
