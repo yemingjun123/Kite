@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件绑定</title>
+		<style type="text/css">
+			div {width: 200px; height: 200px; background-color: pink;}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<!--JQuery--> 
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// 绑定单个事件
+				$('div').bind('mouseover',function(){
+					$(this).stop().animate({'width':'400','height':'400'});
+					$(this).css('background-color','#87CEEB');
+				}); 
+				$('div').bind('mouseout',function(){
+					$(this).stop().animate({'width':'200','height':'200'});
+					$(this).css('background-color','pink');
+				});
+				// 同时绑定多个事件类型
+				$('div').bind('click mouseover',function(){
+					$(this).text('12345...');
+				});
+				// 同时绑定多个事件类型/处理程序
+				$('div').bind({
+					click:function(){$(this).text('click....');},
+					mouseover:function(){$(this).text('mouseover....');},
+					mouseout:function(){$(this).text('mouseout....');}
+				});
+			})
+		</script>
+	</body>
+</html>

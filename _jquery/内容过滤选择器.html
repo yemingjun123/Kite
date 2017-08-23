@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>内容过滤选择器</title>
+	</head>
+	<body>
+		<h5>内容选择器</h5>
+		<div>I like<span>Beijing</span></div>
+		<div>I like Shanghai</div>
+		<div></div>
+		<div>  </div>
+		<div><p>Tianjin</p></div>
+		<!--JQuery--> 
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// contains(text)
+				$('div:contains(Beijing)').css('color','blue');
+				// empty 空节点
+				console.log($('div:empty').length);   // 1
+				// has(选择器)
+				$('div:has(p)').css('background-color','red');
+				// parent 作为父节点存在的节点
+				console.log($('div:parent').length);  // 4
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>阻止浏览器默认行为</title>
+	</head>
+	<body>
+		<div>
+			<div>
+				<button>我是按钮</button>
+			</div>
+		</div>
+		<!--JQuery--> 
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('button').click(function(event){
+					// 阻止事件冒泡
+					event.stopPropagation();
+					// 阻止默认动作
+					//event.preventDefault();
+					console.log("button 被点击了");
+				});
+				$('div>div').click(function(event){
+					console.log("div2 被点击了");
+				});
+				$('div').click(function(event){
+					console.log("div1 被点击了");
+				});
+				$('body').click(function(event){
+					console.log("body 被点击了");
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>并且选择器</title>
+	</head>
+	<style type="text/css">
+		li {list-style: none; width: 200px;}
+	</style>
+	<body>
+		<h1>选择器001</h1>
+		<h2>选择器002</h2>
+		<h3 class="pear">选择器003</h3>
+		<h4 class="pear">选择器004</h4>
+		<ul>
+			<li>item 001</li>
+			<li>item 002</li>
+			<li>item 003</li>
+			<li class="pear">item 004</li>
+			<li class="pear">item 005</li>
+			<li>item 006</li>
+			<li>item 007</li>
+		</ul>
+		<!--JQuery--> 
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(':header').css({"background-color":"yellow","color":"blue"});
+			$(':header.pear').css('color','red');   // 可以调换位置
+			$('li.pear').css('font-size','25px');   // 不能调换位置避免产生歧义
+			$('ul>li:gt(2):lt(3)').css('color','red');
+			$('ul>li').eq('0').css('background-color','orange');
+			$('li:odd').html('<strong>奇数</strong>');
+			$('li:even').html('<strong>偶数</strong>');
+		</script>
+	</body>
+</html>

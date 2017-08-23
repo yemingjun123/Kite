@@ -7,19 +7,20 @@
 			img {padding: 0;}
 			* {margin: 0; padding: 0;}
 			ul li {list-style: none;}
-			.banner {margin: 40px 5%;}
-			.banner>ul>li {width: 200px; height: 260px; float: left; position: relative;} 
-			.banner>ul>li>div{width: 100%; height: 260px;}
-			.banner>ul>li>div.dis-m {position: absolute; left: 0; top: 0; background: rgba(0,0,0,.3);}
-			.banner>ul>li>div.dis-m>h4 {color: #fff; font-size: 30px; padding: 30px; width: 30px; margin: 0 auto;}
+			.main {margin: 40px 5%; height: 260px;}
+			.main>ul>li {width: 200px; height: 260px; float: left; position: relative;} 
+			.main>ul>li>div{width: 100%; height: 260px;}
+			.main>ul>li>div.dis-m {position: absolute; left: 0; top: 0; background: rgba(0,0,0,.3);}
+			.main>ul>li>div.dis-m>h4 {color: #fff; font-size: 30px; padding: 30px; width: 30px; margin: 0 auto;}
 		</style>
 	<body>
-		
+		<!--Top-->
 		<div class="top">
 			<img src="images/top.png" alt="" />
 		</div>
 		
-		<div class="banner">
+		<!--Main-->
+		<div class="main">
 			<ul>
 				<li>
 					<div class="dis-m"><h4>园林酒店</h4></div>
@@ -50,14 +51,18 @@
 		
 		<!--JQuery--> 
 		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-		
 		<script type="text/javascript">
 			$(function(){
 				$(".banner>ul>li").mouseover(function(){
+					// 先暂停正在执行的动画.再加入新的动画
+					// siblings() 用于筛选同辈元素的表达式
 					$(this).stop().animate({width:400}).siblings().stop().animate({width:160});
+					// find 用于查找的表达式
 					$(this).find(".dis-m").hide();
 				});
 				$('.banner>ul').mouseout(function(){
+					// children() 用以过滤子元素的表达式
+					// parent()	取得一个包含着所有匹配元素的唯一父元素的元素集合。
 					$(this).children().find(".dis-m").show().parent().stop().animate({width:200});
 				});
 			})
