@@ -32,6 +32,12 @@
 //			get
 			$("#get_").click(function(){
 				var url = "asp/dome_test.asp";
+				/* $.get(url,data,callback,type)
+				 url:待载入页面的URL地址
+				data:待发送 Key/value 参数。
+			callback:载入成功时回调函数。
+				type:返回内容格式，xml, html, script, json, text, _default。
+				 */
 				$.get(url,function(msg,status){
 					alert("Data："+msg+"\nStatus："+status);
 				});
@@ -39,7 +45,7 @@
 			
 //			post
 			$("#post_").click(function(){
-				$.post("asp/dome_test_post.asp",{name:"Donald Duck",city:"Duckburg" },function(msg,status){
+				$.post("asp/dome_test_post.asp",{"name":"Donald Duck","city":"Duckburg" },function(msg,status){
 					alert("Data："+msg+"\nStatus："+status);
 				});
 			});

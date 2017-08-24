@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延迟对象</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function MyPromise (fn) {
+				this.successList = [];
+				this.failList 	 = [];
+				var  self		 = this;
+				
+				this.success = function() {
+					for (i in self.successList) {
+						self.successList[i].call(null);
+					}
+				}
+				
+				this.fail = function() {
+					for (i in self.failList) {
+						self.failList[i].call(null);
+					}
+				}
+				
+				this.then = function(s,f) {
+					this.successList.push(s);
+					this.failList.push(f);
+					return this;
+				}
+				
+				setTimeout(function(){
+					fn(self.success,self.fail);
+				},0);
+			}
+			
+			new MyPromise(function(success,fail){
+				setTimeout(function(){
+					console.log('函数自身逻辑执行完毕');
+					success();
+				},2000);
+			}).then(function(){
+				console.log('第一个回调');
+			}).then(function(){
+				console.log('第二个回调');
+			});
+		</script>	
+	</body>
+</html>

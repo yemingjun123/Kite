@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>🔍 2</title>
+	</head>
+	<style type="text/css">
+		.sm {background: url(img/星际穿越.jpg) center; background-size: cover; position: absolute; top: 120px; left: 20px; width: 200px; height: 200px; border: 1px solid red;}
+		.sm-cursor {position: absolute; top: 0; left: 0; width: 75px; height: 75px; background-color: rgba(255,255,255,.5); display: none;}
+		.lg-cursor {position: absolute; left: 350px; top: 20px; width: 300px; height: 300px; overflow: hidden;} 
+		.lg-cursor img {position: absolute; top: 0; left: 0;} 
+	</style>
+	<body>
+		<div class="sm"><div class="sm-cursor"></div></div>
+		<div class="lg-cursor"><img class="lg-img" src="img/星际穿越.jpg" alt="" /></div>
+		
+		<!--JQuery-->
+		<script src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var sm_img = $('.sm');
+				var lg_img = $('.lg-cursor>img');
+				var sm_cr  = $('.sm-cursor');
+				var lg_cr  = $('.lg-cursor');
+				var scale  = lg_img.width() / sm_img.width();
+				
+				sm_img.hover(function(){
+					sm_cr.show();
+				},function(){
+					sm_cr.hide();
+				});
+				
+				sm_img.mousemove(function(event){
+					var mouseX = event.pageX - $(this).offset().left;
+					var mouseY = event.pageY - $(this).offset().top;
+					var sm_crX = Math.min(sm_img.width()-sm_cr.width(), Math.max(0,mouseX-sm_cr.width()/2));
+					var sm_crY = Math.min(sm_img.height()-sm_cr.height(), Math.max(0,mouseY-sm_cr.height()/2));
+					sm_cr.css({"left": sm_crX, "top": sm_crY});	
+					lg_img.css({"left": -sm_crX*scale, "top": -sm_crY*scale});
+				});
+			})
+		</script>
+	</body>
+</html>

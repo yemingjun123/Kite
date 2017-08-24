@@ -20,18 +20,32 @@
 			$("#get_msg_do").click(function(){
 				var name = $("#username").val();
 				var url 	= 'http://maizi.itpaimai.com/jquery/ajax';
-				var data = {username: name};
+				var data = {"username": name};
 				$.ajax({
 					type:"jsonp",
 					url: url,
 					data: data,
 					success: function(msg){
-						alert(msg);
 					},
 					error: function(error){
 						alert(error);
 					},
 					timeout: 200
+				});
+			});
+		
+			// ajax链式调用, 不用return 相当于绑定多个异步执行的回调函数， 
+			// 只有return才会顺序执行
+			$.ajax({
+				type:"get",
+				url:"xml/ChinaArea.xml",
+			}).done(function(data){
+				return $.ajax({
+					url: url...
+				});
+			}).done(function(data){
+				return $.ajax({
+					url: url...
 				});
 			});
 		});
