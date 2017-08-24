@@ -18,7 +18,7 @@
 			function Snow () {
 				var self = this;
 				this.init = function() {
-					this.body = $("<img src='img/snow.gif' />");
+					this.body = $("<img src='img/star.jpg' />");
 					this.body.css(this.randomPos());
 					$(document.body).append(this.body);
 					return this;
@@ -32,7 +32,7 @@
 				}
 				
 				this.move = function() {
-					this.body.animate(this.randomPos(), Math.round(Math.random()*2000) + 2000, function(){
+					this.body.animate(this.randomPos(), Math.round(Math.random()*2000) + 5000, function(){
 						self.move();
 					});
 				}
