@@ -1,12 +1,26 @@
+// 引用
+@import "common";
+$dir: right;
 // 嵌套
 #banner {
     .nav {
-        float: left;       
+        float: left;
+        a {
+            &:hover {
+                color: red;
+            }
+            &.current {
+                color: yellow;
+            }
+        }
     }
     .img {
         position: absolute;
+        margin-#{$dir}: 10px;
+        padding-#{$dir}: 10px;
     }
 }
+
 //定义变量
 $fontsize: 12px;
 $wid: 100px;
@@ -16,7 +30,57 @@ div {
     height: $wid/2;
 }
 
+$width: 200px;
+$height: 300px;
+$smallPlane: 59px 36px $width/2 $height/2; // $smallPlane是一个数组
+$smallProp: width height left top;
+.plane-1 {
+    @each $attr in $smallProp {
+        #{$attr}: nth($smallPlane, index($smallProp, $attr));
+    }
+}
 
+// 多值-Map(key:value)-Dictionary
+$planeBackground: (small:url("../img/plane_sm.jpg"), middle:url("../img/plane_md.jpg"), large:url("../img/plane_lg.jpg"));
+.small {
+    background: map-get($planeBackground, small);
+}
+.middle {
+    background: map-get($planeBackground, middle);
+}
+.large {
+    background: map-get($planeBackground, large);
+}
 
+// 代码块引用
+%pos {
+    position: absolute;
+    // 混合
+    @include float(right, false);
+}
+.my-warplanin {
+    @extend %pos;
+    width: 40px; height: 50px;
+    background: url(../img/me.jpg);
+    @include opacity(80);
+}
+.bullet {
+    @extend %pos;
+    width: 40px; height: 50px;
+    background: url(../img/bullet.jpg);
+}
 
+// 二维数组
+$planeData: (small,59px,36px,1),(middle,70px,92px,2),(large,59px,36px,3);
+@each $size,$w,$h,$img in $planeData {
+    .enemy-#{$size} {
+        width: $w;
+        height: $h;
+        background: url(img/plane#{$img}.jpg);
+    }
+}
+
+.hh {
+    height: 2px;
+}
 

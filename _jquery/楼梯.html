@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>楼梯</title>
+	</head>
+	<style type="text/css">
+		* {
+			padding: 0; 
+			margin: 0;
+		}
+		.nav {
+			position: fixed; 
+			top: 25%; left: 40px; 
+			width: 30px;
+			font-size: 12px; 
+			border: 1px solid black;
+		}
+		.nav ul li {
+			list-style: none; 
+			position: relative;
+			height: 30px; width: 30px; 
+			text-align: center; 
+			line-height: 30px; 
+			border-bottom: 1px solid gray;
+		}
+		.nav ul li.last {
+			border-bottom: none; 
+			background: darkred;
+			color: white;
+		}
+		.nav ul li span {
+			display: none;
+			width: 30px; height: 30px; 
+			position: absolute;
+			top: 0; left: 0;
+			color: red;
+		}
+		.nav ul li span.active {
+			display: block;
+			background-color: white;
+			color: red;
+		}
+		.nav ul li:hover span, .nav ul li:hover span.active {
+			display: block;
+			background: darkred;
+			color: white;
+		}
+		.main {
+			width: 80%; 
+			text-align: center;
+			font-size: 40px;
+			font-weight: bold;
+			margin: 0 auto; 
+		}
+		.main div.floor {
+			height: 700px;
+			font-size: 50px;
+			color: white;
+			line-height: 700px;
+		}
+	</style>
+	<body>
+		
+		<!--Navgition-->
+		<div class="nav">
+			<ul>
+				<li>1F<span>服饰</span></li>
+				<li>2F<span>美妆</span></li>
+				<li>3F<span>手机</span></li>
+				<li>4F<span>家电</span></li>
+				<li>5F<span>数码</span></li>
+				<li>6F<span>运动</span></li>
+				<li>7F<span>居家</span></li>
+				<li>8F<span>母婴</span></li>
+				<li>9F<span>食品</span></li>
+				<li>10F<span>图书</span></li>
+				<li>11F<span>服务</span></li>
+				<li class="last">Top</li>
+			</ul>
+		</div>
+		
+		 <!--Main-->
+		 <div class="main">
+		 	<div class="floor" style="background: brown;">服饰</div>
+		 	<div class="floor" style="background: orangered;">美妆</div>
+		 	<div class="floor" style="background: orange;">手机</div>
+		 	<div class="floor" style="background: yellow;">家电</div>
+		 	<div class="floor" style="background: greenyellow;">数码</div>
+		 	<div class="floor" style="background: deepskyblue;">运动</div>
+		 	<div class="floor" style="background: mediumpurple;">居家</div>
+		 	<div class="floor" style="background: gray;">母婴</div>
+		 	<div class="floor" style="background: wheat;">食品</div>
+		 	<div class="floor" style="background: steelblue;">图书</div>
+		 	<div class="floor" style="background: slategray;">服务</div>
+		 </div>
+		 
+		 <!--JQuery--> 
+		 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		 <script type="text/javascript">
+		 	$(function(){
+		 		var floors 	 = $('.floor');
+		 		var floorNav = $('.nav>ul>li:not(.last)');
+		 		var isClick  = false;
+		 		// 重新加载时定位当前选中的楼层
+		 		alterNavBarStatus();
+		 		// 点击导航
+		 		floorNav.click(function(){
+		 			console.log("222...");
+		 			isClick = true;
+					$(this).children('span').addClass('active').parent().siblings().children('span').removeClass('active');
+		 			$('html,body').stop().animate({scrollTop:floors.eq($(this).index()).offset().top},function(){
+		 				isClick = false;
+		 			});
+		 		});
+		 		
+		 		// 回到顶部
+		 		$('.last').click(function(){
+		 			isClick = true;
+		 			floorNav.first().children('span').addClass('active').parent().siblings().children('span').removeClass('active');
+		 			$('html,body').stop().animate({scrollTop:floors.first().offset().top},function(){
+		 				isClick = false;
+		 			});
+		 		});
+		 		
+		 		// 滑动
+		 		$(window).scroll(function(){
+		 			if (isClick) return;
+		 			alterNavBarStatus();
+		 		});
+		 		
+		 		function alterNavBarStatus(){
+		 			var currentFloor = floors.filter(function(){
+		 				return Math.abs(($(window).scrollTop() - $(this).offset().top) < $(this).height()/2) 
+		 			});
+		 			var index = currentFloor.index();
+		 			floorNav.eq(index).children('span').addClass('active').parent().siblings().children('span').removeClass('active');
+		 		}
+		 	})
+		 </script>
+	</body>
+</html>

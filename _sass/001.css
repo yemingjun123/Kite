@@ -1,11 +1,88 @@
+@charset "UTF-8";
+html,
+body {
+  font-size: 14px;
+}
+
 #banner .nav {
-  float: left; }
+  float: left;
+}
+#banner .nav a:hover {
+  color: red;
+}
+#banner .nav a.current {
+  color: yellow;
+}
 #banner .img {
-  position: absolute; }
+  position: absolute;
+  margin-right: 10px;
+  padding-right: 10px;
+}
 
 div {
   font-size: 12px;
   width: 100px;
-  height: 50px; }
+  height: 50px;
+}
+
+.plane-1 {
+  width: 59px;
+  height: 36px;
+  left: 100px;
+  top: 150px;
+}
+
+.small {
+  background: url("../img/plane_sm.jpg");
+}
+
+.middle {
+  background: url("../img/plane_md.jpg");
+}
+
+.large {
+  background: url("../img/plane_lg.jpg");
+}
+
+.my-warplanin, .bullet {
+  position: absolute;
+  float: right;
+}
+
+.my-warplanin {
+  width: 40px;
+  height: 50px;
+  background: url(../img/me.jpg);
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+.bullet {
+  width: 40px;
+  height: 50px;
+  background: url(../img/bullet.jpg);
+}
+
+.enemy-small {
+  width: 59px;
+  height: 36px;
+  background: url(img/plane1.jpg);
+}
+
+.enemy-middle {
+  width: 70px;
+  height: 92px;
+  background: url(img/plane2.jpg);
+}
+
+.enemy-large {
+  width: 59px;
+  height: 36px;
+  background: url(img/plane3.jpg);
+}
+
+.hh {
+  height: 2px;
+}
 
 /*# sourceMappingURL=001.css.map */
