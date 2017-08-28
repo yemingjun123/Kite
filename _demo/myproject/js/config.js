@@ -3,6 +3,7 @@ require.config({
 	paths: {
 		"jquery" : "jquery/jquery-3.2.1",
 		"banner" : "module/banner",
+		"jqy-ui" : "jquery/jquery-ui",
 		"common" : "common"
 		}
 });
